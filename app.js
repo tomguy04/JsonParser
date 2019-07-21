@@ -3,17 +3,16 @@ const food = require('./example_data.json');
 
 //return an array of keys that match on a certain value
 function getKeys(val) {
-    // var objects = [];
-    // for (var i in foodData) {
-    //     if (!foodData.hasOwnProperty(i)) continue;
-    //     if (typeof foodData[i] == 'object') {
-    //         objects = objects.concat(getKeys(foodData[i], val));
-    //     } else if (foodData[i] == val) {
-    //         objects.push(i);
-    //     }
-    // }
-    // return objects;
-    console.log(val,food);
+    for (let i = 0; i < food.items.length; i++){
+        // console.log('food.items[i] '+food.items[i]);
+        for (key in food.items[i]){
+            // console.log('key in food.items[i] ' + food.items[i][key]);
+            console.log(i+ ' ' + key + ' ' + food.items[i][key]);
+            if(food.items[i][key]===val){
+                // console.log(food.items[i])
+            }
+        }
+    }
 }
 
-console.log(getKeys('Red'));
+getKeys('Red');
